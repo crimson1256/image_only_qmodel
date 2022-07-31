@@ -1,0 +1,22 @@
+AcceleratorConfig:
+  Driver: python
+  Interface: axi_stream
+  Precision:
+    Input: float
+    Output: float
+Backend: VivadoAccelerator
+Board: pynq-z2
+ClockPeriod: 5
+HLSConfig:
+  Model:
+    Precision: ap_fixed<16,9>
+    ReuseFactor: 1
+    Strategy: resource
+IOType: io_stream
+InputData: null
+KerasModel: !keras_model 'hls_model_yolo/imgonly_qmodel/keras_model.h5'
+OutputDir: hls_model_yolo/imgonly_qmodel
+OutputPredictions: null
+ProjectName: myproject
+Stamp: 19bd9890
+XilinxPart: xc7z020clg400-1
