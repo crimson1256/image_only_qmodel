@@ -54,8 +54,7 @@ if {$opt(reset)} {
 } else {
   open_project myproject_prj
 }
-set_top myproject_axi
-add_files firmware/myproject_axi.cpp -cflags "-std=c++0x"
+set_top myproject
 add_files firmware/myproject.cpp -cflags "-std=c++0x"
 add_files -tb myproject_test.cpp -cflags "-std=c++0x"
 add_files -tb firmware/weights
@@ -67,7 +66,7 @@ if {$opt(reset)} {
 }
 catch {config_array_partition -maximum_size 4096}
 config_compile -name_max_length 60
-set_part {xc7z020clg400-1}
+set_part {xcku115-flvb2104-2-i}
 create_clock -period 5 -name default
 
 
@@ -95,7 +94,7 @@ if {$opt(cosim)} {
   cosim_design -trace_level all
   set time_end [clock clicks -milliseconds]
   puts "INFO:"
-  puts [read [open myproject_prj/solution1/sim/report/myproject_axi_cosim.rpt r]]
+  puts [read [open myproject_prj/solution1/sim/report/myproject_cosim.rpt r]]
   report_time "C/RTL SIMULATION" $time_start $time_end
 }
 

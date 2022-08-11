@@ -1,6 +1,6 @@
 //Numpy array shape [4]
-//Min 0.189406499267
-//Max 0.226453989744
+//Min 0.193626135588
+//Max 0.213742971420
 //Number of zeros 0
 
 #ifndef S3_H_
@@ -9,7 +9,7 @@
 #ifndef __SYNTHESIS__
 model_default_t s3[4];
 #else
-model_default_t s3[4] = {0.2123505, 0.2104366, 0.1894065, 0.2264540};
+model_default_t s3[4] = {0.2009899, 0.1981954, 0.1936261, 0.2137430};
 #endif
 
 #endif

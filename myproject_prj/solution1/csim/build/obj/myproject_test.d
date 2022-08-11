@@ -1,5 +1,5 @@
 obj/myproject_test.o: ../../../../myproject_test.cpp \
- ../../../../firmware/myproject_axi.h ../../../../firmware/myproject.h \
+ ../../../../firmware/myproject.h \
  /opt/Xilinx/Vivado/2019.2/include/ap_int.h \
  /opt/Xilinx/Vivado/2019.2/include/ap_common.h \
  /opt/Xilinx/Vivado/2019.2/include/ap_decl.h \

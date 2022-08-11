@@ -7,29 +7,25 @@
 source /opt/Xilinx/Vivado/2019.2/scripts/vivado_hls/hls.tcl -notrace
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'hisky' on host 'r7515ed520.EE.NCTU.edu.tw' (Linux_x86_64 version 3.10.0-1160.11.1.el7.x86_64) on Mon Aug 01 02:42:03 CST 2022
+INFO: [HLS 200-10] For user 'hisky' on host 'r7515ed520.EE.NCTU.edu.tw' (Linux_x86_64 version 3.10.0-1160.11.1.el7.x86_64) on Thu Aug 11 20:30:29 CST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
-INFO: [HLS 200-10] In directory '/home/hisky/DEEPCALO/deepcalo-with-hls-4-ml-v0.2_2022_5/demos/atlas_specific_usecases/train_recommended_electron_models_for_hls4ml/hls_model_yolo/imgonly_qmodel'
+INFO: [HLS 200-10] In directory '/home/hisky/DEEPCALO/deepcalo-with-hls-4-ml-v0.2_2022_5/demos/atlas_specific_usecases/train_recommended_electron_models_for_hls4ml/hls_qmodel/imgonly_qmodel_bnfold_4'
 Sourcing Tcl script 'build_prj.tcl'
-INFO: [HLS 200-10] Opening project '/home/hisky/DEEPCALO/deepcalo-with-hls-4-ml-v0.2_2022_5/demos/atlas_specific_usecases/train_recommended_electron_models_for_hls4ml/hls_model_yolo/imgonly_qmodel/myproject_prj'.
-INFO: [HLS 200-10] Adding design file 'firmware/myproject_axi.cpp' to the project
+INFO: [HLS 200-10] Creating and opening project '/home/hisky/DEEPCALO/deepcalo-with-hls-4-ml-v0.2_2022_5/demos/atlas_specific_usecases/train_recommended_electron_models_for_hls4ml/hls_qmodel/imgonly_qmodel_bnfold_4/myproject_prj'.
 INFO: [HLS 200-10] Adding design file 'firmware/myproject.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'myproject_test.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'firmware/weights' to the project
 INFO: [HLS 200-10] Adding test bench file 'tb_data' to the project
-INFO: [HLS 200-10] Opening solution '/home/hisky/DEEPCALO/deepcalo-with-hls-4-ml-v0.2_2022_5/demos/atlas_specific_usecases/train_recommended_electron_models_for_hls4ml/hls_model_yolo/imgonly_qmodel/myproject_prj/solution1'.
+INFO: [HLS 200-10] Creating and opening solution '/home/hisky/DEEPCALO/deepcalo-with-hls-4-ml-v0.2_2022_5/demos/atlas_specific_usecases/train_recommended_electron_models_for_hls4ml/hls_qmodel/imgonly_qmodel_bnfold_4/myproject_prj/solution1'.
+INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
+INFO: [XFORM 203-1161] The maximum of name length is set into 60.
+INFO: [HLS 200-10] Setting target device to 'xcku115-flvb2104-2-i'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
-INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
-INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
-INFO: [XFORM 203-1161] The maximum of name length is set into 60.
-INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
-INFO: [XFORM 203-1161] The maximum of name length is set into 60.
 ***** C SIMULATION *****
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
    Compiling ../../../../myproject_test.cpp in debug mode
    Compiling ../../../../firmware/myproject.cpp in debug mode
-   Compiling ../../../../firmware/myproject_axi.cpp in debug mode
    Generating csim.exe
 Processing input 0
 em_barrel
@@ -3118,7 +3114,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_6
 leaky_re_lu_5
 max_pooling2d
 USE POOL2D LARGE
@@ -3881,7 +3876,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_7
 leaky_re_lu_6
 zp2d_conv2d_2
 conv2d_2
@@ -4642,7 +4636,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_8
 leaky_re_lu_7
 max_pooling2d_1
 USE POOL2D LARGE
@@ -4831,7 +4824,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_9
 leaky_re_lu_8
 zp2d_conv2d_4
 conv2d_4
@@ -5018,7 +5010,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_10
 leaky_re_lu_9
 max_pooling2d_2
 USE POOL2D LARGE
@@ -5067,7 +5058,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_11
 leaky_re_lu_10
 zp2d_conv2d_6
 conv2d_6
@@ -5114,7 +5104,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_12
 leaky_re_lu_11
 max_pooling2d_3
 USE POOL2D LARGE
@@ -5130,7 +5119,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_13
 leaky_re_lu_12
 zp2d_conv2d_8
 conv2d_8
@@ -5144,7 +5132,6 @@ USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
 USE DENSE LARGE2
-batch_normalization_14
 leaky_re_lu_13
 flatten
 dense_6
@@ -5156,16 +5143,138 @@ leaky_re_lu_15
 dense_8
 activation
 Predictions
-229.244 
+68.9443 
 Quantized predictions
-{ data: 230.016, last: 1 }
- 
-INFO: Saved inference results to file: tb_data/csim_results.log
+20.4766 INFO: Saved inference results to file: tb_data/csim_results.log
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-***** C SIMULATION COMPLETED IN 0h0m29s *****
-***** C/RTL VALIDATION *****
-ERROR: Test failed
-ERROR: - csim log:      ./tb_data/csim_results.log
-ERROR: - RTL-cosim log: ./tb_data/rtl_cosim_results.log
-INFO: [Common 17-206] Exiting vivado_hls at Mon Aug  1 02:42:34 2022...
+***** C SIMULATION COMPLETED IN 0h0m28s *****
+***** C/RTL SYNTHESIS *****
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'firmware/myproject.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: firmware/nnet_utils/nnet_dense_latency.h:64:9
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: firmware/nnet_utils/nnet_dense_latency.h:79:2
+WARNING: [HLS 214-104] Only for-loops and functions support the dataflow: firmware/nnet_utils/nnet_dense_latency.h:76:9
+WARNING: [HLS 214-104] Only for-loops and functions support the dataflow: firmware/nnet_utils/nnet_batchnorm.h:79:9
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:114:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:114:25
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:115:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:115:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:120:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:120:37
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:123:74
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:123:78
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:125:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:125:27
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:130:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:130:22
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:133:77
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:133:81
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:135:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:135:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:140:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:140:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:145:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:145:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:150:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:150:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:153:77
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:153:81
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:155:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:155:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:160:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:160:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:165:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:165:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:168:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:168:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:170:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:170:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:175:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:175:31
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:180:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:180:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:185:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:185:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:188:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:188:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:190:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:190:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:195:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:195:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:200:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:200:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:203:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:203:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:205:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:205:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:210:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:210:31
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:215:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:215:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:220:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:220:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:223:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:223:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:225:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:225:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:230:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:230:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:235:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:235:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:238:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:238:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:240:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:240:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:245:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:245:31
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:250:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:250:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:255:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:255:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:258:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:258:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:260:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:260:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:265:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:265:29
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:270:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:270:24
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:273:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:273:85
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:275:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:275:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:280:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:280:23
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:281:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:281:23
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:284:75
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:284:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:286:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:286:38
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:289:79
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:289:84
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:291:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:291:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:296:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:296:23
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:299:75
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:299:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:301:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:301:38
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:304:79
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:304:84
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:306:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:306:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:311:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:311:23
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:314:75
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:314:80
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:316:1
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: firmware/myproject.cpp:316:26
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: firmware/myproject.cpp:67:2
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: firmware/myproject.cpp:68:5
+WARNING: [HLS 200-471] Dataflow form checks found 122 issue(s) in file firmware/myproject.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:16:58 ; elapsed = 00:17:44 . Memory (MB): peak = 1046.043 ; gain = 526.004 ; free physical = 72178 ; free virtual = 73014
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:16:58 ; elapsed = 00:17:44 . Memory (MB): peak = 1046.043 ; gain = 526.004 ; free physical = 72179 ; free virtual = 73016
+INFO: [HLS 200-10] Starting code transformations ...

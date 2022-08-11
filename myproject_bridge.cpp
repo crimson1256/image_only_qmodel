@@ -1,7 +1,7 @@
 #ifndef MYPROJECT_BRIDGE_H_
 #define MYPROJECT_BRIDGE_H_
 
-#include "firmware/myproject_axi.h"
+#include "firmware/myproject.h"
 #include "firmware/nnet_utils/nnet_helpers.h"
 #include <algorithm>
 #include <map>
@@ -50,36 +50,36 @@ void collect_trace_output(struct trace_data *c_trace_outputs) {
 
 // Wrapper of top level function for Python bridge
 void myproject_float(
-    float em_barrel[N_IN],
-    float layer55_out[N_OUT],
+    float em_barrel[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1],
+    float layer46_out[N_LAYER_44],
     unsigned short &const_size_in_1,
     unsigned short &const_size_out_1
 ) {
     
-    input_axi_t em_barrel_ap[N_IN];
-    nnet::convert_data<float, input_axi_t, N_IN>(em_barrel, em_barrel_ap);
+    hls::stream<input_t> em_barrel_ap("em_barrel");
+    nnet::convert_data<float, input_t, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(em_barrel, em_barrel_ap);
 
-    output_axi_t layer55_out_ap[N_OUT];
+    hls::stream<result_t> layer46_out_ap("layer46_out");
 
-    myproject_axi(em_barrel_ap,layer55_out_ap);
+    myproject(em_barrel_ap,layer46_out_ap,s3,b3,w4,b4,w8,b8,w11,b11,w15,b15,w18,b18,w22,b22,w25,b25,w29,b29,w32,b32,w36,b36,s38,b38,w40,b40,s42,b42,w44,b44,const_size_in_1,const_size_out_1);
 
-    nnet::convert_data<output_axi_t, float, N_OUT>(layer55_out_ap, layer55_out);
+    nnet::convert_data<result_t, float, N_LAYER_44>(layer46_out_ap, layer46_out);
 }
 
 void myproject_double(
-    double em_barrel[N_IN],
-    double layer55_out[N_OUT],
+    double em_barrel[N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1],
+    double layer46_out[N_LAYER_44],
     unsigned short &const_size_in_1,
     unsigned short &const_size_out_1
 ) {
-    input_axi_t em_barrel_ap[N_IN];
-    nnet::convert_data<double, input_axi_t, N_IN>(em_barrel, em_barrel_ap);
+    hls::stream<input_t> em_barrel_ap("em_barrel");
+    nnet::convert_data<double, input_t, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(em_barrel, em_barrel_ap);
 
-    output_axi_t layer55_out_ap[N_OUT];
+    hls::stream<result_t> layer46_out_ap("layer46_out");
 
-    myproject_axi(em_barrel_ap,layer55_out_ap);
+    myproject(em_barrel_ap,layer46_out_ap,s3,b3,w4,b4,w8,b8,w11,b11,w15,b15,w18,b18,w22,b22,w25,b25,w29,b29,w32,b32,w36,b36,s38,b38,w40,b40,s42,b42,w44,b44,const_size_in_1,const_size_out_1);
 
-    nnet::convert_data<output_axi_t, double, N_OUT>(layer55_out_ap, layer55_out);
+    nnet::convert_data<result_t, double, N_LAYER_44>(layer46_out_ap, layer46_out);
 }
 
 }

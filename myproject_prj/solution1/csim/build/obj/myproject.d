@@ -53,4 +53,19 @@ obj/myproject.o: ../../../../firmware/myproject.cpp \
  ../../../../firmware/nnet_utils/nnet_pooling.h \
  ../../../../firmware/nnet_utils/nnet_pooling_stream.h \
  /opt/Xilinx/Vivado/2019.2/include/utils/x_hls_utils.h \
- ../../../../firmware/nnet_utils/nnet_pooling.h
+ ../../../../firmware/nnet_utils/nnet_pooling.h \
+ ../../../../firmware/weights/s3.h ../../../../firmware/weights/b3.h \
+ ../../../../firmware/weights/w4.h ../../../../firmware/weights/b4.h \
+ ../../../../firmware/weights/w8.h ../../../../firmware/weights/b8.h \
+ ../../../../firmware/weights/w11.h ../../../../firmware/weights/b11.h \
+ ../../../../firmware/weights/w15.h ../../../../firmware/weights/b15.h \
+ ../../../../firmware/weights/w18.h ../../../../firmware/weights/b18.h \
+ ../../../../firmware/weights/w22.h ../../../../firmware/weights/b22.h \
+ ../../../../firmware/weights/w25.h ../../../../firmware/weights/b25.h \
+ ../../../../firmware/weights/w29.h ../../../../firmware/weights/b29.h \
+ ../../../../firmware/weights/w32.h ../../../../firmware/weights/b32.h \
+ ../../../../firmware/weights/w36.h ../../../../firmware/weights/b36.h \
+ ../../../../firmware/weights/s38.h ../../../../firmware/weights/b38.h \
+ ../../../../firmware/weights/w40.h ../../../../firmware/weights/b40.h \
+ ../../../../firmware/weights/s42.h ../../../../firmware/weights/b42.h \
+ ../../../../firmware/weights/w44.h ../../../../firmware/weights/b44.h

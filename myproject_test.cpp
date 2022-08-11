@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "firmware/myproject_axi.h"
+#include "firmware/myproject.h"
 #include "firmware/nnet_utils/nnet_helpers.h"
 
 //hls-fpga-machine-learning insert bram
@@ -76,28 +76,29 @@ int main(int argc, char **argv)
       }
 
       //hls-fpga-machine-learning insert data
-      input_axi_t inputs[N_IN];
-      nnet::copy_data_axi<float, input_axi_t, 0, N_IN>(in, inputs);
-      output_axi_t outputs[N_OUT];
+      hls::stream<input_t> em_barrel("em_barrel");
+      nnet::copy_data_me<float, input_t, 0, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(in, em_barrel);
+      hls::stream<result_t> layer46_out("layer46_out");
 
       //hls-fpga-machine-learning insert top-level-function
-      myproject_axi(inputs,outputs);
+      unsigned short size_in1,size_out1;
+      myproject(em_barrel,layer46_out,size_in1,size_out1);
 
       if (e % CHECKPOINT == 0) {
         std::cout << "Predictions" << std::endl;
         //hls-fpga-machine-learning insert predictions
-        for(int i = 0; i < N_OUT; i++) {
+        for(int i = 0; i < N_LAYER_44; i++) {
           std::cout << pr[i] << " ";
         }
         std::cout << std::endl;
         std::cout << "Quantized predictions" << std::endl;
         //hls-fpga-machine-learning insert quantized
-        nnet::print_result<output_axi_t, N_OUT>(outputs, std::cout, true);
+        nnet::print_result_me<result_t, N_LAYER_44>(layer46_out, std::cout, true);
       }
       e++;
 
       //hls-fpga-machine-learning insert tb-output
-      nnet::print_result<output_axi_t, N_OUT>(outputs, fout);
+      nnet::print_result_me<result_t, N_LAYER_44>(layer46_out, fout);
 
     }
     fin.close();
@@ -106,18 +107,19 @@ int main(int argc, char **argv)
     std::cout << "INFO: Unable to open input/predictions file, using default input." << std::endl;
 
     //hls-fpga-machine-learning insert zero
-    input_axi_t inputs[N_IN];
-    inputs[N_IN-1].last = 1;
-    output_axi_t outputs[N_OUT];
+    hls::stream<input_t> em_barrel("em_barrel");
+    nnet::fill_zero_me<input_t, N_INPUT_1_1*N_INPUT_2_1*N_INPUT_3_1>(em_barrel);
+    hls::stream<result_t> layer46_out("layer46_out");
 
     //hls-fpga-machine-learning insert top-level-function
-    myproject_axi(inputs,outputs);
+    unsigned short size_in1,size_out1;
+    myproject(em_barrel,layer46_out,size_in1,size_out1);
 
     //hls-fpga-machine-learning insert output
-    nnet::print_result<output_axi_t, N_OUT>(outputs, std::cout, true);
+    nnet::print_result_me<result_t, N_LAYER_44>(layer46_out, std::cout, true);
 
     //hls-fpga-machine-learning insert tb-output
-    nnet::print_result<output_axi_t, N_OUT>(outputs, fout);
+    nnet::print_result_me<result_t, N_LAYER_44>(layer46_out, fout);
 
   }
 

@@ -6,6 +6,8 @@ CSIM_DESIGN = 1
 
 __SIM_FPO__ = 1
 
+__HLS_FPO_v6_1__ = 1
+
 __SIM_MATHHLS__ = 1
 
 __SIM_OPENCV__ = 1
@@ -18,7 +20,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../myproject_test.cpp ../../../../firmware/myproject.cpp ../../../../firmware/myproject_axi.cpp
+HLS_SOURCES = ../../../../myproject_test.cpp ../../../../firmware/myproject.cpp
 
 TARGET := csim.exe
 
@@ -47,6 +49,8 @@ IFLAG += -I "${AUTOPILOT_TECH}/generic/SystemC/AESL_comp"
 IFLAG += -I "${AUTOPILOT_TOOL}/auto_cc/include"
 IFLAG += -D__SIM_FPO__
 
+IFLAG += -D__HLS_FPO_v6_1__
+
 IFLAG += -D__SIM_OPENCV__
 
 IFLAG += -D__SIM_FFT__
@@ -55,7 +59,7 @@ IFLAG += -D__SIM_FIR__
 
 IFLAG += -D__SIM_DDS__
 
-IFLAG += -D__DSP48E1__
+IFLAG += -D__DSP48E2__
 IFLAG += -Wno-unknown-pragmas -std=c++0x 
 IFLAG += -g
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
@@ -81,9 +85,3 @@ $(ObjDir)/myproject.o: ../../../../firmware/myproject.cpp $(ObjDir)/.dir
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD -std=c++0x  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/myproject.d
-
-$(ObjDir)/myproject_axi.o: ../../../../firmware/myproject_axi.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../firmware/myproject_axi.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -std=c++0x  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/myproject_axi.d
